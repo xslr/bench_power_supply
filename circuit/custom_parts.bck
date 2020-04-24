@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LM1875
+D 20W Audio Power Amplifier, TO-220-5
+K audio amplifier
+F http://www.ti.com/lit/ds/symlink/lm1875.pdf
+$ENDCMP
+#
+#End Doc Library
