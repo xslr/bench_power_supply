@@ -1,0 +1,4 @@
+[submodule "firmware/third_party/stm32-cmake"]
+	path = firmware/third_party/stm32-cmake
+	url = git@github.com:xslr/stm32-cmake
+	branch = chibios_20
