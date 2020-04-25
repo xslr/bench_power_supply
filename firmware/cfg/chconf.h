@@ -142,6 +142,18 @@
 
 /** @} */
 
+/**
+ * @brief   Debug option, consistency checks.
+ * @details If enabled then all the assertions in the kernel code are
+ *          activated. This includes consistency checks inside the kernel,
+ *          runtime anomalies and port-defined checks.
+ *
+ * @note    The default is @p FALSE.
+ */
+#if !defined(CH_DBG_ENABLE_ASSERTS)
+#define CH_DBG_ENABLE_ASSERTS               FALSE
+#endif
+
 /*===========================================================================*/
 /**
  * @name Subsystem options

@@ -23,6 +23,7 @@
 #include "shell.h"
 #include "chprintf.h"
 
+#include "pwmcfg.h"
 #include "usbcfg.h"
 
 /*===========================================================================*/
@@ -115,6 +116,8 @@ int main(void) {
    *   RTOS is active.
    */
   halInit();
+
+  pwmObjectInit(&PWMD1);
   chSysInit();
 
   /*
@@ -137,6 +140,17 @@ int main(void) {
    * Shell manager initialization.
    */
   shellInit();
+
+  pwmStart(&PWMD1, &pwmCfg1);
+  palSetPadMode(GPIOA, 8, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+  palSetPadMode(GPIOA, 9, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+  palSetPadMode(GPIOA, 10, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+  palSetPadMode(GPIOA, 11, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+
+  pwmEnableChannel(&PWMD1, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, 4750));
+  pwmEnableChannel(&PWMD1, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, 4750));
+  pwmEnableChannel(&PWMD1, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, 4750));
+  pwmEnableChannel(&PWMD1, 3, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, 4750));
 
   /*
    * Creates the blinker thread.
