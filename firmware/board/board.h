@@ -54,11 +54,17 @@
  */
 
 /* on-board */
-
 #define GPIOC_LED               13
 
-#define GPIOA_USBDM             11      // pin 8
-#define GPIOA_USBDP             12      // pin 9
+#define GPIOA_USBDM             11      // usb at A.11
+#define GPIOA_USBDP             12      // usb at A.12
+
+/* max7219 */
+#define MAX_DISP_PORT           GPIOB
+#define MAX_DISP_SCK_PAD        13
+#define MAX_DISP_MISO_PAD       14
+#define MAX_DISP_MOSI_PAD       15
+#define MAX_DISP_LOAD_PAD       12
 
 #define GPIOC_OSC32_IN          14
 #define GPIOC_OSC32_OUT         15

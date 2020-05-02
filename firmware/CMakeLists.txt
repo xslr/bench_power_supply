@@ -13,10 +13,12 @@ INCLUDE_DIRECTORIES(
 )
 
 SET(PROJECT_SOURCES
-  src/main.c
+  src/main.cpp
   board/board.c
   src/usbcfg.c
   src/pwmcfg.c
+  src/spicfg.c
+  src/max7219.cpp
 )
 
 ADD_DEFINITIONS(-DCORTEX_USE_FPU=FALSE)
